@@ -2,13 +2,17 @@ body {
     background: #262E2A;
     overflow: hidden;
 }
-
+.grow{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
 .gun {
     animation: spin 2s forwards;
     background: #B73F41;
     border-radius: 50%;
-    height: 120px;
-    width: 120px;
+    height: 400px;
+    width: 400px;
 }
 
 @keyframes spin {
@@ -61,7 +65,6 @@ body {
         transform: rotate(-60deg);
     }
 }
-
 @keyframes shoot2 {
     0% {
         transform: rotate(-60deg);
@@ -70,7 +73,6 @@ body {
         transform: rotate(-120deg);
     }
 }
-
 @keyframes shoot3 {
     0% {
         transform: rotate(-120deg);
@@ -79,7 +81,6 @@ body {
         transform: rotate(-180deg);
     }
 }
-
 @keyframes shoot4 {
     0% {
         transform: rotate(-180deg);
@@ -88,7 +89,6 @@ body {
         transform: rotate(-240deg);
     }
 }
-
 @keyframes shoot5 {
     0% {
         transform: rotate(-240deg);
@@ -97,7 +97,6 @@ body {
         transform: rotate(-300deg);
     }
 }
-
 @keyframes shoot6 {
     0% {
         transform: rotate(-300deg);
@@ -113,39 +112,39 @@ body {
     border-radius: 50%;
     content: '';
     display: block;
-    height: 0.5em;
-    width: 0.5em;
+    height: 0.7em;
+    width: 0.7em;
     z-index: 2;
 }
 
 .gun:after {
     background: #262E2A;
     border-radius: 50%;
-    box-shadow: 0em -2.60em #262E2A,
-    2.25em -4.02em #262E2A,
-    2.25em -1.25em #262E2A,
-    4.60em 0em #262E2A,
-    2.25em 1.25em #262E2A,
-    2.25em 4.02em #262E2A,
-    0em 2.60em #262E2A,
-    -2.25em 4.02em #262E2A,
-    -2.25em 1.25em #262E2A,
-    -4.60em 0em #262E2A,
-    -2.25em -1.25em #262E2A,
-    -2.25em -4.02em #262E2A;
+    box-shadow: 0em -4.6em #262E2A,
+    5.25em -11.02em #262E2A,
+    4.25em -2.25em #262E2A,
+    11.6em 0em #262E2A,
+    4.25em 2.25em #262E2A,
+    5.25em 11.02em #262E2A,
+    0em 4.6em #262E2A,
+    -5.25em 11.02em #262E2A,
+    -4.25em 2.25em #262E2A,
+    -11.6em 0em #262E2A,
+    -4.25em -2.25em #262E2A,
+    -5.25em -11.02em #262E2A;
     content: '';
     display: block;
-    height: 2em;
-    width: 2em;
+    height: 4em;
+    width: 4em;
 }
 
 .bullet {
     animation: load 1.5s;
-    border: solid 1px #6c2627;
+    border: solid 3px #6c2627;
     background-color:  #B73F41;
     border-radius: 50%;
-    height: 1.75em;
-    width: 1.75em;
+    height: 3em;
+    width: 3em;
     z-index: 1;
 }
 
@@ -172,7 +171,6 @@ body {
         opacity: 1;
     }
 }
-
 @keyframes load2 {
     0% {
         opacity: 0;
@@ -187,7 +185,6 @@ body {
         opacity: 1;
     }
 }
-
 @keyframes load3 {
     0% {
         opacity: 0;
@@ -202,7 +199,6 @@ body {
         opacity: 1;
     }
 }
-
 @keyframes load4 {
     0% {
         opacity: 0;
@@ -217,7 +213,6 @@ body {
         opacity: 1;
     }
 }
-
 @keyframes load5 {
     0% {
         opacity: 0;
@@ -232,7 +227,6 @@ body {
         opacity: 1;
     }
 }
-
 @keyframes load6 {
     0% {
         opacity: 0;
@@ -251,27 +245,27 @@ body {
 /* Ajoutez les styles pour les éléments inner individuels ici */
 #bullet1 {
     animation: load1 2s forwards;
-    transform: rotate(0deg) translateX(0em) translateY(-2.60em);
+    transform: rotate(0deg) translateX(0em) translateY(-4.6em);
 }
 #bullet2 {
     animation: load2 1.66s forwards;
-    transform: rotate(0deg) translateX(2.25em) translateY(-1.25em);
+    transform: rotate(0deg) translateX(4.25em) translateY(-2.25em);
 }
 #bullet3 {
     animation: load3 1.33s forwards;
-    transform: rotate(0deg) translateX(2.25em) translateY(1.25em);
+    transform: rotate(0deg) translateX(4.25em) translateY(2.25em);
 }
 #bullet4 {
     animation: load4 1s forwards;
-    transform: rotate(0deg) translateX(0) translateY(2.6em);
+    transform: rotate(0deg) translateX(0) translateY(4.6em);
 }
 #bullet5 {
     animation: load5 0.66s forwards;
-    transform: rotate(0deg) translateX(-2.25em) translateY(1.25em);
+    transform: rotate(0deg) translateX(-4.25em) translateY(2.25em);
 }
 #bullet6 {
     animation: load6 0.33s forwards;
-    transform: rotate(0deg) translateX(-2.25em) translateY(-1.25em);
+    transform: rotate(0deg) translateX(-4.25em) translateY(-2.25em);
 }
 
 .hidden {
@@ -280,7 +274,7 @@ body {
 
 #dead{
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #B73F41;
@@ -288,13 +282,15 @@ body {
     border-radius: 5px;
     color: #262E2A;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
-    margin: 0 auto;
     padding: 0.5em 1em;
     text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all 0.3s ease-in-out;
     display: none;
+}
+
+@media screen and (max-width: 767px) {
+    #dead{
+        font-size: 2em;
+    }
 }
